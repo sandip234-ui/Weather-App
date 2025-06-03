@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <script src="./script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exile&family=Jost:ital,wght@0,100..900;1,100..900&family=Kapakana:wght@300..400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+TC&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body
+  class="flex items-center justify-center w-full h-screen text-white bg-fixed bg-no-repeat bg-cover bg-gradient-to-b from-blue-400 to-blue-200">
+
+  <!-- Glass card -->
+  <main
+    class="main-container w-[700px] h-[880px]  rounded-[25px] p-[20px] backdrop-blur-[100px] bg-gradient-to-t from-black/15 to-[rgba(225,225,225,0.15)] shadow-lg z-[1] mx-auto">
+
+    <!-- Search bar -->
+    <header class="relative w-full max-w-[600px] mx-auto px-6">
+      <input type="text" placeholder="Search city"
+        class="city-input w-full h-[7rem] pl-10 pr-16 rounded-[99px] border-[3px] border-transparent bg-[rgba(0,0,0,0.15)] outline-none text-2xl font-medium transition-all duration-200 focus:border-[rgba(0,0,0,0.15)] focus:border-[2px] placeholder:text-[rgba(225,225,225,0.75)] placeholder:pl-[30px]" />
+      <button class="absolute text-4xl text-white -translate-y-1/2 cursor-pointer right-10 top-1/2 search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </header>
+
+    <!-- Weather Info Section -->
+    <section class="hidden weather-info px-[50px] pt-[20px] pb-[20px]  h-[80%]">
+      <div class="mt-[25px] flex flex-col gap-[6px] mb-[3rem] ">
+        <div class="flex items-center justify-between  location-date-container mb-[2rem]">
+          <div class="flex loaction gap-[6px] items-center">
+            <i class="text-4xl fa-solid fa-location-dot"></i>
+            <h4 class="text-4xl font-bold country-text ml-[2rem]">Jakarta</h4>
+          </div>
+          <h5 class="text-2xl current-date-text mr-[2rem]">Friday,07 Jan</h5>
+        </div>
+        <div class="flex items-center justify-between weather-summary-container">
+            <img src="./Public/assets/weather/clouds.svg" alt="Weather Summary Image" class="weather-summary-img h-[220px] w-[220px]">
+          <div class="weather-summary-info text-end mr-[2rem]">
+            <h1 class="text-3xl font-bold temp-text">29 °C</h1>
+            <h3 class="text-2xl condition-text mt-[1rem]">Clouds</h3>
+          </div>
+        </div>
+        <div class="flex justify-between font-semibold  weather-conditions-container mt-[1.5rem]">
+          <div class="flex codition-item align-center gap-[6px]">
+            <i class="mt-3 mr-3 text-2xl fa-solid fa-droplet"></i>
+            <div class="condition-info">
+              <h5 class="text-2xl">Humidity</h5>
+              <h5 class="text-md Humidity-value">55%</h5>
+            </div>
+          </div>
+          <div class="flex codition-item align-center gap-[6px]">
+            <i class="mt-3 mr-3 text-2xl fa-solid fa-wind"></i>
+            <div class="condition-info">
+              <h5 class="text-2xl">Wind Speed</h5>
+              <h5 class="wind-speed-value text-md">5 M/s</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Forecast Section -->
+      <div class="forecast-item-container  h-[11rem] w-full gap-[0.75rem] flex overflow-auto pb-[8px]">
+        <div class="forecast-item h-[90%] w-[7rem] mt-[1rem] mr-2 ml-2 hover:bg-[rgba(173,225,231,0.596)] min-w-[80px] border bg-white/10 flex flex-col gap-[6px] p-[8px] items-center rounded-[12px] transition-[background] duration-300">
+          <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+          <img src="./Public/assets/weather/thunderstorm.svg" alt="forecast image" class="forecast-item-img h-[35px] w-[35px];">
+          <h5 class="font-semibold forecast-item-temp">29 °C</h5>
+        </div>
+      </div>
+      <!-- Forecast Section -->
+    </section>
+    <!-- Weather Info Section -->
+
+    <!-- Search City Section -->
+    <section class="search-city">
+      <div class="flex flex-col items-center justify-center text-center section-message">
+        <img src="./Public/assets/message/search-city.png" alt="Search Image" class="msg-img mt-[5%]">
+        <div>
+          <h1 class="text-3xl font-bold mt-[1rem]">Search City</h1>
+          <h4 class="mb-3 text-gray-200 font-lg mt-[0.75rem]">Enter the name of your city to get started! 😄</h4>
+        </div>
+      </div>
+    </section>
+    <!-- Search City Section -->
+
+    <!-- Not Found Section -->
+    <section class="hidden not-found">
+      <div class="flex flex-col items-center justify-center text-center section-message">
+        <img src="./Public/assets/message/not-found.png" alt="Error Msg Image"
+          class="Error-msg-img mt-[15%] object-contain" />
+        <div class="mt-4">
+          <h1 class="text-4xl font-bold mt-[1.5rem]">Opps! City Not Found 😕</h1>
+          <p class="mt-[2rem] text-2xl font-semibold">Try a different city name</p>
+        </div>
+      </div>
+    </section>
+    <!-- Not Found Section -->
+  </main>
+</body>
+
+</html>
