@@ -12,7 +12,7 @@ A simple weather application that allows users to search for a city and view the
 
 ## 🖼️ Preview
 
-![Weather App Screenshot](Public/assets/preview.png)
+<img src="Public/assets/preview.png" alt="Weather App Screenshot" width="400" height="400"/>
 
 ## Project Structure
 
